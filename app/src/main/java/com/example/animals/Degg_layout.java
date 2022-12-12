@@ -18,9 +18,9 @@ public class Degg_layout extends AppCompatActivity {
 
         //komentarer finns i egg vertionen
 
-        if (Degg.deggList.size() == 0) {
+
             Degg.populateList();
-        }
+
 
         recyclerView = findViewById(R.id.lv_deggList);
         recyclerView.setHasFixedSize(true);
