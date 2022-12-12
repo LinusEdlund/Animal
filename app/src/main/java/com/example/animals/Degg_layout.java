@@ -17,10 +17,7 @@ public class Degg_layout extends AppCompatActivity {
         setContentView(R.layout.activity_degg_layout);
 
         //komentarer finns i egg vertionen
-
-
-            Degg.populateList();
-
+        Degg.populateList();
 
         recyclerView = findViewById(R.id.lv_deggList);
         recyclerView.setHasFixedSize(true);

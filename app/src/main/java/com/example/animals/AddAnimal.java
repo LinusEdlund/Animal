@@ -1,8 +1,12 @@
 package com.example.animals;
 
+import static com.example.animals.Degg.deggList;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,9 +34,6 @@ public class AddAnimal extends AppCompatActivity {
         rb_degg = findViewById(R.id.rb_degg);
         rb_egg = findViewById(R.id.rb_egg);
 
-
-
-
         // vi bara går tillbaka
         btn_cancle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,36 +42,6 @@ public class AddAnimal extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-        // Register a listener for the radio button
-        /*
-        rb_egg.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // Check if the radio button is checked
-                if (isChecked) {
-                    // Create a new object of Egg and add it to the list
-                    new Egg("Egg1", 1, "http://example.com/egg1.jpg", 1);
-                }
-            }
-        });
-        */
-
-        rb_egg.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-            }
-        });
-
-        rb_degg.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-            }
-        });
-
 
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +52,6 @@ public class AddAnimal extends AppCompatActivity {
 
                 // Check if the radio button is checked
                 if (rb_egg.isChecked()){
-
                     new Egg(name, age, url, 2);
 
                     Intent intent = new Intent(AddAnimal.this, MainActivity.class);

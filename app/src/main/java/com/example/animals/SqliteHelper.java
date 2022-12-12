@@ -1,14 +1,20 @@
 package com.example.animals;
 
+import static com.example.animals.Degg.deggList;
+import static com.example.animals.Egg.eggList;
+
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class SqliteHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "groupp6.db";
     public static final int VERSION = 1;
+    public static final String TABLE_NAME = "animals";
 
 
 
@@ -41,7 +47,13 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS animals");
+        db.execSQL("DROP TABLE IF EXISTS Species");
+        onCreate(db);
     }
+
+
+
+
 }

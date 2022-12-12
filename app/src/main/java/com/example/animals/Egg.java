@@ -13,11 +13,6 @@ public class Egg extends Animals{
         eggList.add(this);
     }
 
-    // This is a method that returns the content of the list
-    public static List<Egg> getEggList() {
-        return eggList;
-    }
-
     // Metod för att fylla listan
     public static void populateList() {
         new Egg("Kalle Anka", 1, "https://example.com/kalle_anka.png",2);
