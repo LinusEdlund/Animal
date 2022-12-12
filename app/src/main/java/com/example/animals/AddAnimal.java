@@ -3,13 +3,12 @@ package com.example.animals;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class AddEgg extends AppCompatActivity {
+public class AddAnimal extends AppCompatActivity {
 
     private Button btn_cancle, btn_ok;
     private EditText et_NameAddEgg, et_AgeAddEgg, et_imgEgg;
@@ -17,7 +16,7 @@ public class AddEgg extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_egg);
+        setContentView(R.layout.activity_add_animals);
 
         //hittar all id som är nödvändiga
         btn_cancle = findViewById(R.id.btn_cancelEgg);
@@ -30,7 +29,7 @@ public class AddEgg extends AppCompatActivity {
         btn_cancle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddEgg.this, Egg_layout.class);
+                Intent intent = new Intent(AddAnimal.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -45,9 +44,9 @@ public class AddEgg extends AppCompatActivity {
                 int age = Integer.parseInt(et_AgeAddEgg.getText().toString());
                 String bild = et_imgEgg.getText().toString();
 
-                Egg add = new Egg(name,age,bild);
+                Egg add = new Egg(name,age,bild,1);
 
-                Intent intent = new Intent(AddEgg.this, Egg_layout.class);
+                Intent intent = new Intent(AddAnimal.this, Egg_layout.class);
                 startActivity(intent);
 
 

@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btn_egg, btn_degg;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         //hittar id
         btn_egg = findViewById(R.id.btn_Egg);
         btn_degg = findViewById(R.id.btn_Degg);
+
 
 
 
@@ -45,5 +48,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void onBtnAddClick(View view) {
+        Intent intent = new Intent(this, AddAnimal.class);
+        startActivity(intent);
     }
 }

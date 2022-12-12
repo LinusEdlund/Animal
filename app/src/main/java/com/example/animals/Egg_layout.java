@@ -49,15 +49,7 @@ public class Egg_layout extends AppCompatActivity {
 
 
 
-        //event som gå till AddEgg när du klickar på knappen AddOne i egg menyn
-        btn_AddOne = findViewById(R.id.btn_addOneEgg);
-        btn_AddOne.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Egg_layout.this, AddEgg.class);
-                startActivity(intent);
-            }
-        });
+
 
     }
 
